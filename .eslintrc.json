@@ -1,3 +1,40 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next", "prettier", "eslint:recommended", "next/core-web-vitals", "plugin:@next/next/recommended"],
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [".js", ".jsx", ".tsx"]
+      }
+    ],
+    "react/forbid-prop-types": "off",
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": [
+      2,
+      {
+        "html": "enforce",
+        "custom": "enforce",
+        "explicitSpread": "enforce",
+        "exceptions": ["Component"]
+      }
+    ],
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": ["arrow-function", "function-declaration"]
+      }
+    ]
+  }
 }
