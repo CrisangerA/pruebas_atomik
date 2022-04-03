@@ -1,7 +1,9 @@
-import '../styles/globals.css'
+import { PostsProvider } from 'src/context/PostsContext';
+import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
-
-export default MyApp
+const MyApp = ({ Component, pageProps }) => (
+  <PostsProvider>
+    <Component {...pageProps} />
+  </PostsProvider>
+);
+export default MyApp;
